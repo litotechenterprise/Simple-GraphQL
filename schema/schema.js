@@ -8,25 +8,30 @@ const {
     GraphQLInt,
     GraphQLSchema,
     GraphQLID
-    
 } = graphql
 
-const users = [
-    {id:"1", firstName: "Pablo", age: 23},
-    {id:"2", firstName: "Richie", age: 25},
-    {id:"3", firstName: "Paul", age: 56},
-    {id:"4", firstName: "Ted", age: 21},    
-    {id:"5", firstName: "Mark", age: 10},
-
-]
-
+const CompanyType = new GraphQLObjectType({
+    name:"Company",
+    fields: {
+        id:{type:GraphQLString},
+        name:{type:GraphQLString},
+        description: {type: GraphQLString}
+    }
+})
 
 const UserType = new GraphQLObjectType({
     name: "User",
     fields: {
         id: {type:GraphQLString },
         firstName: {type:GraphQLString},
-        age: {type: GraphQLInt}
+        age: {type: GraphQLInt},
+        company: {
+            type:CompanyType,
+            resolve(parentValue, args) {
+                return axios.get(`http://localhost:3000/companies/${parentValue.companyId}`)
+                .then(res => res.data)
+            }
+        }
     }
 })
 

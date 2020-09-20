@@ -1,11 +1,17 @@
 {
     "users": [
-        {"id":"1","firstName":"Pablo" ,"age":23},
-        {"id":"2","firstName":"Matt" ,"age":22},
-        {"id":"3","firstName":"Skyler" ,"age":23},
-        {"id":"4","firstName":"Fred" ,"age":24},
-        {"id":"5","firstName":"Tyler" ,"age":22},
-        {"id":"6","firstName":"Mateo" ,"age":22},
-        {"id":"7","firstName":"Kevin" ,"age":22}     
+        {"id":"1","firstName":"Pablo" ,"age":23,"companyId":"1"},
+        {"id":"2","firstName":"Matt" ,"age":22,"companyId":"3"},
+        {"id":"3","firstName":"Skyler" ,"age":23,"companyId":"4"},
+        {"id":"4","firstName":"Fred" ,"age":24,"companyId":"1"},
+        {"id":"5","firstName":"Tyler" ,"age":22,"companyId":"4"},
+        {"id":"6","firstName":"Mateo" ,"age":22,"companyId":"2"},
+        {"id":"7","firstName":"Kevin" ,"age":22,"companyId":"3"}     
+    ],
+    "companies": [
+        {"id":"1", "name":"FaceBook", "description":"Social Media Power House"},
+        {"id":"2", "name":"Google", "description":"Search Engine"},
+        {"id":"3", "name":"Apple", "description":"Sell Tech Products"},
+        {"id":"4", "name":"Microsoft", "description":"Sell Tech Products"}
     ]
 }
