@@ -1,16 +1,19 @@
-const express = require('express')
-const { graphqlHTTP } = require('express-graphql');
-const schema = require('./schema/schema')
+const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
+const schema = require("./schema/schema");
 
-const app = express()
+const app = express();
 
-app.use('/graphql', graphqlHTTP({
-    graphiql:true,
-    schema:schema
-}))
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    graphiql: true,
+    schema: schema,
+  })
+);
 
-const PORT = 8080
+const PORT = 8080;
 
 app.listen(PORT, () => {
-    console.log("Listening on port " + PORT)
-})
+  console.log(`GraphQL client running on http://localhost:${PORT}/graphql`);
+});

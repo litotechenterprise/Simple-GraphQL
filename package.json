@@ -1,12 +1,11 @@
 {
-  "name": "graphql_practice",
+  "name": "simple-graphql",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "json:server": "json-server --watch db.json",
-    "dev":"nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
